@@ -25,3 +25,9 @@ export const fetchingQuotesProgress = (
 ) => {
   return state.fetchingQuotes;
 };
+
+export const numberOfQuotesToFetch = (
+  state: Pick<ApplicationReduxStore, "applicationSettings">
+) => {
+  return state.applicationSettings.numberOfQuotesToFetch;
+};

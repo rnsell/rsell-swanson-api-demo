@@ -26,10 +26,12 @@ export const TotalVotes = styled(Row)``;
 
 interface HeaderProps {
   votes: number;
+  isLoading?: boolean;
 }
 
 export const Header: FunctionComponent<HeaderProps> = (props) => {
-  const { votes } = props;
+  const { votes, isLoading = false } = props;
+  const adjustedVotes = isLoading ? 0 : votes;
 
   return (
     <StyledMenu data-testid="header__menu">
@@ -43,7 +45,7 @@ export const Header: FunctionComponent<HeaderProps> = (props) => {
       </Col>
       <Col xs={8}>
         <TotalVotes justify="end" data-testid="header__total_votes">
-          Total Votes: {votes}
+          Total Votes: {adjustedVotes}
         </TotalVotes>
       </Col>
     </StyledMenu>

@@ -15,7 +15,16 @@ const fetchQuotes = async (
   dependencies: Pick<EpicDependencies, "getRonSwonsonQuotes">
 ) => {
   const { getRonSwonsonQuotes } = dependencies;
-  const { numberOfQuotesToFetch } = state$.value.applicationSettings;
+  const {
+    numberOfQuotesToFetch,
+    failApiRequests,
+  } = state$.value.applicationSettings;
+  const errorAction = fetchingLoadingAction(FetchingQuoteState.ERROR);
+  const errorQuotesTableAction = populateQuotesTable([]);
+
+  if (failApiRequests) {
+    return [errorAction, errorQuotesTableAction];
+  }
 
   try {
     const quotes = await getRonSwonsonQuotes(numberOfQuotesToFetch);
@@ -25,9 +34,8 @@ const fetchQuotes = async (
     return [successAction, populateQuotesTableAction];
   } catch (ex) {
     // Could do something more special here but we only have one error state
-    const errorAction = fetchingLoadingAction(FetchingQuoteState.ERROR);
 
-    return [errorAction];
+    return [errorAction, errorQuotesTableAction];
   }
 };
 

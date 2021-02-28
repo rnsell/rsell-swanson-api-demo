@@ -1,6 +1,108 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`quote-list.component.tsx Should match snapshot 1`] = `
+exports[`quote-list.component.tsx Should match snapshot for loading 1`] = `
+<QuoteList
+  isLoading={true}
+  listOfQuotes={
+    Array [
+      Object {
+        "downVoteSelected": false,
+        "onDownVoteClick": [MockFunction],
+        "onUpVoteClick": [MockFunction],
+        "quoteText": "Go Beyond Plus Ultra!!",
+        "upVoteSelected": false,
+        "votes": 5,
+      },
+    ]
+  }
+  totalNumberOfQuotes={1}
+>
+  <List
+    bordered={true}
+    data-testid="quote-list"
+    dataSource={
+      Array [
+        true,
+      ]
+    }
+    renderItem={[Function]}
+  >
+    <div
+      className="ant-list ant-list-split ant-list-bordered"
+      data-testid="quote-list"
+    >
+      <Spin
+        size="default"
+        spinning={false}
+        wrapperClassName=""
+      >
+        <div
+          className="ant-spin-nested-loading"
+        >
+          <div
+            className="ant-spin-container"
+            key="container"
+          >
+            <ul
+              className="ant-list-items"
+            >
+              <Row>
+                <div
+                  className="ant-row"
+                  style={
+                    Object {
+                      "marginBottom": undefined,
+                      "marginLeft": undefined,
+                      "marginRight": undefined,
+                      "marginTop": undefined,
+                    }
+                  }
+                >
+                  <Styled(Skeleton)
+                    active={true}
+                    paragraph={false}
+                  >
+                    <Skeleton
+                      active={true}
+                      avatar={false}
+                      className="sc-jSgupP grydea"
+                      paragraph={false}
+                      title={true}
+                    >
+                      <div
+                        className="ant-skeleton ant-skeleton-active sc-jSgupP grydea"
+                      >
+                        <div
+                          className="ant-skeleton-content"
+                        >
+                          <Title
+                            prefixCls="ant-skeleton-title"
+                          >
+                            <h3
+                              className="ant-skeleton-title"
+                              style={
+                                Object {
+                                  "width": undefined,
+                                }
+                              }
+                            />
+                          </Title>
+                        </div>
+                      </div>
+                    </Skeleton>
+                  </Styled(Skeleton)>
+                </div>
+              </Row>
+            </ul>
+          </div>
+        </div>
+      </Spin>
+    </div>
+  </List>
+</QuoteList>
+`;
+
+exports[`quote-list.component.tsx Should match snapshot for not loading 1`] = `
 <QuoteList
   listOfQuotes={
     Array [
@@ -14,6 +116,7 @@ exports[`quote-list.component.tsx Should match snapshot 1`] = `
       },
     ]
   }
+  totalNumberOfQuotes={1}
 >
   <List
     bordered={true}

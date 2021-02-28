@@ -13,9 +13,16 @@ describe("header.component.ts", () => {
     expect(component).toMatchSnapshot();
   });
 
-  it("Should display correct number of votes.", () => {
+  it("Should display correct number of votes while not loading.", () => {
     const totalVotes = component.find(TotalVotes);
 
     expect(totalVotes.text()).toBe(`Total Votes: ${15}`);
+  });
+
+  it("Should display zero votes while not loading.", () => {
+    component.setProps({ isLoading: true });
+    const totalVotes = component.find(TotalVotes);
+
+    expect(totalVotes.text()).toBe(`Total Votes: ${0}`);
   });
 });

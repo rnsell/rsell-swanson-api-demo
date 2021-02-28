@@ -1,20 +1,27 @@
 import React from "react";
 import { mount } from "enzyme";
 import { quoteFixture } from "./quotes-fixture";
-import { QuoteList } from "./quote-list.component";
+import { QuoteList, StyledSkeleton } from "./quote-list.component";
 
 describe("quote-list.component.tsx", () => {
   let component: any;
   const componentProps = {
     listOfQuotes: [quoteFixture],
+    totalNumberOfQuotes: [quoteFixture].length,
   };
 
   beforeEach(() => {
     component = mount(<QuoteList {...componentProps} />);
   });
 
-  // This component has no real logic so lets just snapshot it and move on
-  it("Should match snapshot", () => {
+  it("Should match snapshot for not loading", () => {
+    expect(component).toMatchSnapshot();
+  });
+
+  it("Should match snapshot for loading", () => {
+    component.setProps({ isLoading: true });
+    expect(component.find(StyledSkeleton)).toBeTruthy();
+
     expect(component).toMatchSnapshot();
   });
 });
