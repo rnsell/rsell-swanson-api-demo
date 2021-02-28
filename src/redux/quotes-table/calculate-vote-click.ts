@@ -2,23 +2,17 @@ import { match } from "ts-pattern";
 import { ClickOnQuote, ButtonClickType } from "./quotes-table.actions";
 import { Quote } from "./quotes-table.model";
 
-const downVoteClick = {
+export const downVoteClick = {
   payload: {
     clickType: ButtonClickType.DOWN_VOTE,
   },
 };
 
-const upVoteClick = {
+export const upVoteClick = {
   payload: {
     clickType: ButtonClickType.UP_VOTE,
   },
 };
-
-// id: string;
-// quoteText: string;
-// votes: number;
-// upVoteSelected: boolean;
-// downVoteSelected: boolean;
 
 export const calculateNewVoteClick = (
   quote: Quote,

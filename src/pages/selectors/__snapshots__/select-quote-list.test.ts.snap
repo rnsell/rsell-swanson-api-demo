@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`select-quote-list.ts Should dispatch actions 1`] = `
+Object {
+  "downVoteSelected": false,
+  "id": "a936264fd5671771d4033893764022d2",
+  "onDownVoteClick": [Function],
+  "onUpVoteClick": [Function],
+  "quoteText": "Go Beyond Plus Ultra!!",
+  "upVoteSelected": false,
+  "votes": 9000,
+}
+`;
+
+exports[`select-quote-list.ts Should dispatch actions 2`] = `
+Array [
+  Object {
+    "payload": Object {
+      "clickType": "UP_VOTE",
+      "quoteId": "a936264fd5671771d4033893764022d2",
+    },
+    "type": "QUOTES_TABLE::CLICK",
+  },
+]
+`;
+
+exports[`select-quote-list.ts Should dispatch actions 3`] = `
+Array [
+  Object {
+    "payload": Object {
+      "clickType": "DOWN_VOTE",
+      "quoteId": "a936264fd5671771d4033893764022d2",
+    },
+    "type": "QUOTES_TABLE::CLICK",
+  },
+]
+`;
+
+exports[`select-quote-list.ts Should generate list of quotes 1`] = `
+Array [
+  Object {
+    "downVoteSelected": false,
+    "id": "a936264fd5671771d4033893764022d2",
+    "onDownVoteClick": [Function],
+    "onUpVoteClick": [Function],
+    "quoteText": "Go Beyond Plus Ultra!!",
+    "upVoteSelected": false,
+    "votes": 9000,
+  },
+]
+`;
+
+exports[`select-quote-list.ts selectQuoteProps Should dispatch actions 1`] = `
+Object {
+  "downVoteSelected": false,
+  "id": "a936264fd5671771d4033893764022d2",
+  "onDownVoteClick": [Function],
+  "onUpVoteClick": [Function],
+  "quoteText": "Go Beyond Plus Ultra!!",
+  "upVoteSelected": false,
+  "votes": 9000,
+}
+`;
+
+exports[`select-quote-list.ts selectQuoteProps Should dispatch actions 2`] = `
+Array [
+  Object {
+    "payload": Object {
+      "clickType": "UP_VOTE",
+      "quoteId": "a936264fd5671771d4033893764022d2",
+    },
+    "type": "QUOTES_TABLE::CLICK",
+  },
+]
+`;
+
+exports[`select-quote-list.ts selectQuoteProps Should dispatch actions 3`] = `
+Array [
+  Object {
+    "payload": Object {
+      "clickType": "DOWN_VOTE",
+      "quoteId": "a936264fd5671771d4033893764022d2",
+    },
+    "type": "QUOTES_TABLE::CLICK",
+  },
+]
+`;

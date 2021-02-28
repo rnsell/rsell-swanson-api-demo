@@ -1,0 +1,108 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`header.component.ts Should match snapshot 1`] = `
+<Header
+  votes={15}
+>
+  <Styled(Row)
+    data-testid="header__menu"
+  >
+    <Row
+      className="sc-bdfBwQ jVopyv"
+      data-testid="header__menu"
+    >
+      <div
+        className="ant-row sc-bdfBwQ jVopyv"
+        data-testid="header__menu"
+        style={
+          Object {
+            "marginBottom": undefined,
+            "marginLeft": undefined,
+            "marginRight": undefined,
+            "marginTop": undefined,
+          }
+        }
+      >
+        <Col
+          xs={16}
+        >
+          <div
+            className="ant-col ant-col-xs-16"
+            style={Object {}}
+          >
+            <Row>
+              <div
+                className="ant-row"
+                style={
+                  Object {
+                    "marginBottom": undefined,
+                    "marginLeft": undefined,
+                    "marginRight": undefined,
+                    "marginTop": undefined,
+                  }
+                }
+              >
+                <styled.h3
+                  data-testid="header__title"
+                >
+                  <h3
+                    className="sc-gsTCUz fRZIZs"
+                    data-testid="header__title"
+                  >
+                    Ron Swanson Quote Voter
+                  </h3>
+                </styled.h3>
+                <styled.span
+                  data-testid="header__sub-title"
+                >
+                  <span
+                    className="sc-dlfnbm bscQXW"
+                    data-testid="header__sub-title"
+                  >
+                    "Vote for your favorite quote!"
+                  </span>
+                </styled.span>
+              </div>
+            </Row>
+          </div>
+        </Col>
+        <Col
+          xs={8}
+        >
+          <div
+            className="ant-col ant-col-xs-8"
+            style={Object {}}
+          >
+            <Styled(Row)
+              data-testid="header__total_votes"
+              justify="end"
+            >
+              <Row
+                className="sc-hKgILt"
+                data-testid="header__total_votes"
+                justify="end"
+              >
+                <div
+                  className="ant-row ant-row-end sc-hKgILt"
+                  data-testid="header__total_votes"
+                  style={
+                    Object {
+                      "marginBottom": undefined,
+                      "marginLeft": undefined,
+                      "marginRight": undefined,
+                      "marginTop": undefined,
+                    }
+                  }
+                >
+                  Total Votes: 
+                  15
+                </div>
+              </Row>
+            </Styled(Row)>
+          </div>
+        </Col>
+      </div>
+    </Row>
+  </Styled(Row)>
+</Header>
+`;

@@ -11,6 +11,7 @@ const Content = styled.div`
   margin: ${spacing(2)};
 `;
 
+// I need to handle the loading mode
 export const QuotesPage = () => {
   const dispatch = useDispatch();
   const quotes = useSelector(quotesList);

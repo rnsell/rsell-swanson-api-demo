@@ -51,21 +51,21 @@ export const QuoteComponent: React.FunctionComponent<QuoteProps> = (props) => {
   const downVoteButtonType = downVoteSelected ? "primary" : "default";
 
   return (
-    <List.Item data-test-id="quote__list-item">
-      <RowContainer data-test-id="quote__row-button-container">
-        <VotingContainer data-test-id="quote__button-container">
+    <List.Item data-testid="quote__list-item">
+      <RowContainer data-testid="quote__row-button-container">
+        <VotingContainer data-testid="quote__button-container">
           <Button
             icon={<LikeTwoTone />}
             onClick={onUpVoteClick}
             type={upVoteButtonType}
             aria-label="Increase Vote"
-            data-test-id="quote__upvote-button"
+            data-testid="quote__upvote-button"
           />
           <QuoteCounterContainer
             aria-label="Total Votes"
-            data-test-id="quote__quote-counter-container"
+            data-testid="quote__quote-counter-container"
           >
-            <QuoteCounterJusticationContainer data-test-id="quote__quote-counter-justification-container">
+            <QuoteCounterJusticationContainer data-testid="quote__quote-counter-justification-container">
               {votes}
             </QuoteCounterJusticationContainer>
           </QuoteCounterContainer>
@@ -74,13 +74,10 @@ export const QuoteComponent: React.FunctionComponent<QuoteProps> = (props) => {
             onClick={onDownVoteClick}
             type={downVoteButtonType}
             aria-label="Decrease Vote"
-            data-test-id="quote__downvote-button"
+            data-testid="quote__downvote-button"
           />
         </VotingContainer>
-        <QuoteContainer
-          data-test-id="quote__quote-text"
-          aria-label="Quote Text"
-        >
+        <QuoteContainer data-testid="quote__quote-text" aria-label="Quote Text">
           {quoteText}
         </QuoteContainer>
       </RowContainer>

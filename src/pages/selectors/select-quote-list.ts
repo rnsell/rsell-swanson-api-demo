@@ -8,10 +8,12 @@ export const selectQuoteProps = (dispatch: DispatchFunction) => (
   quote: Quote
 ): QuoteProps => {
   const { id } = quote;
+
   const onUpVoteClick = () => {
     const upVoateAction = upVote(id);
     dispatch(upVoateAction);
   };
+
   const onDownVoteClick = () => {
     const downVoteAction = downVote(id);
     dispatch(downVoteAction);

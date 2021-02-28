@@ -17,6 +17,7 @@ export const QuoteList: React.FunctionComponent<QuoteListProps> = (props) => {
         renderItem={(aQuoteRow: QuoteProps) => (
           <QuoteComponent {...aQuoteRow} />
         )}
+        data-testid="quote-list"
       />
     </>
   );
