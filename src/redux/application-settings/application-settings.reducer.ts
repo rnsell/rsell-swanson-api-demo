@@ -1,13 +1,22 @@
-export type ApplicationSettings = {
-  numberOfQuotesToFetch: number;
-};
+import { match } from "ts-pattern";
+import { ApplicationSettingAction } from "./application-settings.actions";
+import { ApplicationSettings } from "./application-settings.model";
 
 const defaultActionSettings: ApplicationSettings = {
   numberOfQuotesToFetch: 10,
+  failApiRequests: false,
 };
 
 export const applicationSettingReducers = (
-  state = defaultActionSettings
+  state = defaultActionSettings,
+  action: ApplicationSettingAction
 ): ApplicationSettings => {
-  return state;
+  return match<ApplicationSettingAction, ApplicationSettings>(action)
+    .with(
+      { type: "APPLICATION_SETTING::UPDATE_SETTINGS" },
+      (anAction: Partial<ApplicationSettingAction>) => {
+        return { ...state, ...anAction.payload };
+      }
+    )
+    .otherwise(() => state);
 };

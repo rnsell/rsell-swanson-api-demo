@@ -1,6 +1,6 @@
 import React from "react";
 import { Provider } from "react-redux";
-import { configureStore } from "./redux";
+import { configureStore, createNewChromeExtensionMessage } from "./redux";
 import { ThemeContainer } from "./containers";
 import { QuotesPage } from "./pages";
 
@@ -15,6 +15,19 @@ store.subscribe(() => {
   window.sessionStorage.setItem(storageKey, serialziedStoreState);
 });
 
+// Listen for chrome extension messages and send the data to redux
+// The epic will santize message data so as not to cause any errors
+window.addEventListener("message", (event) => {
+  if (event?.data?.namespace === "ron-swanson-extension") {
+    const payload = event?.data?.payload;
+
+    if (!!payload) {
+      const extensionAction = createNewChromeExtensionMessage(payload);
+
+      store.dispatch(extensionAction);
+    }
+  }
+});
 function App() {
   return (
     <Provider store={store}>

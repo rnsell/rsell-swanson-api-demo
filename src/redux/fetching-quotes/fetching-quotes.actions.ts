@@ -13,7 +13,9 @@ export type SetFetchQuoteAction = {
 
 export type FetchingQuoteActions = FetchQuoteAction | SetFetchQuoteAction;
 
-export const fetchQuotes = createAction<undefined>("FETCH_QUOTES::FETCH");
+export const fetchQuotes = createAction<undefined, "FETCH_QUOTES::FETCH">(
+  "FETCH_QUOTES::FETCH"
+);
 
 export const fetchingLoadingAction = createAction<FetchingQuoteState>(
   "FETCH_QUOTES::SET_FETCH_STATE"

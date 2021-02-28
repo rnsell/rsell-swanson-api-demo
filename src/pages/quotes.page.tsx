@@ -7,6 +7,7 @@ import { FetchingQuoteState, fetchQuotes } from "../redux";
 import { fetchingQuotesProgress, quotesList, voteCount } from "../views";
 import { generateListOfQuotes } from "./selectors";
 import { match } from "ts-pattern";
+import { Alert } from "antd";
 
 const Content = styled.div`
   margin: ${spacing(2)};
@@ -18,7 +19,7 @@ export const QuotesPage = () => {
   const quotes = useSelector(quotesList);
   const votes = useSelector(voteCount);
   const progress = useSelector(fetchingQuotesProgress);
-
+  const errorFetchingData = progress === FetchingQuoteState.ERROR;
   const listOfQuotes = generateListOfQuotes(dispatch, quotes);
   useEffect(() => {
     match<FetchingQuoteState, void>(progress)
@@ -31,6 +32,13 @@ export const QuotesPage = () => {
     <>
       <Header votes={votes} />
       <Content>
+        {errorFetchingData && (
+          <Alert
+            message="Error Occured"
+            description="An error occured fetching fetching data. Try refreshing the page"
+            type="error"
+          />
+        )}
         <QuoteList listOfQuotes={listOfQuotes} />
       </Content>
     </>
