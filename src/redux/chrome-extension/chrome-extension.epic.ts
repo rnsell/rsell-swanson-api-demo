@@ -13,27 +13,34 @@ import {
   ChromeExtensionNewMessageActions,
 } from "./chrome-extension.actions";
 
+const variableExists = (someValue: any) => {
+  return someValue !== null && someValue !== undefined;
+};
+
 const generateApplicationSettingAction = (
   payload: any = {}
 ): [ApplicationSettingAction] => {
-  const { numberOfQuotes, blockNetworkRequests } = payload;
+  const { numberOfQuotes, blockNetworkRequests, additionalLoadTime } = payload;
 
-  const numberOfQuotesExists =
-    numberOfQuotes !== null && numberOfQuotes !== undefined;
+  const numberOfQuotesExists = variableExists(numberOfQuotes);
   const quoteProperty = numberOfQuotesExists
     ? { numberOfQuotesToFetch: numberOfQuotes }
     : {};
 
-  const blockNetworkRequestsExists =
-    blockNetworkRequests !== null && blockNetworkRequests !== undefined;
-
+  const blockNetworkRequestsExists = variableExists(blockNetworkRequests);
   const failApiRequestsProperty = blockNetworkRequestsExists
     ? { failApiRequests: blockNetworkRequests }
+    : {};
+
+  const additionalLoadTimeExists = variableExists(additionalLoadTime);
+  const additionalLoadTimeExistsProperty = additionalLoadTimeExists
+    ? { loadingTime: additionalLoadTime }
     : {};
 
   const adjustedPayload = {
     ...failApiRequestsProperty,
     ...quoteProperty,
+    ...additionalLoadTimeExistsProperty,
   };
 
   const action = updateApplicationSettings(adjustedPayload);

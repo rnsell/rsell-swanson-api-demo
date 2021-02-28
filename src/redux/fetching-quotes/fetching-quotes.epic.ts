@@ -1,7 +1,7 @@
 import { EpicDependencies } from "../epic-depdencies";
 import { Epic, ofType, StateObservable } from "redux-observable";
 import { from, merge } from "rxjs";
-import { switchMap, mergeMap } from "rxjs/operators";
+import { switchMap, mergeMap, take, delay } from "rxjs/operators";
 import { ApplicationReduxStore } from "../root-reducer";
 import {
   fetchingLoadingAction,
@@ -48,9 +48,12 @@ export const fetchingQuotes: Epic<
   return action$.pipe(
     ofType<FetchQuoteAction>("FETCH_QUOTES::FETCH"),
     switchMap(() => {
+      const { loadingTime } = state$.value.applicationSettings;
+
       const loadingAction = fetchingLoadingAction(FetchingQuoteState.LOADING);
       const loading$ = from([loadingAction]);
       const request$ = from(fetchQuotes(state$, dependencies)).pipe(
+        delay(loadingTime),
         mergeMap((array) => from(array))
       );
 

@@ -5,6 +5,7 @@ import { ApplicationSettings } from "./application-settings.model";
 const defaultActionSettings: ApplicationSettings = {
   numberOfQuotesToFetch: 10,
   failApiRequests: false,
+  loadingTime: 0,
 };
 
 export const applicationSettingReducers = (
