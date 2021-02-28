@@ -5,11 +5,14 @@ import { rootReducer } from "./root-reducer";
 import { rootEpic } from "./root-epic";
 import { generateEpicDependencies } from "./epic-depdencies";
 
-const epicMiddleware = createEpicMiddleware({
-  dependencies: generateEpicDependencies(),
-});
+export const configureStore = (
+  baseState: any = {},
+  dependencyOverides: any = {}
+) => {
+  const epicMiddleware = createEpicMiddleware({
+    dependencies: { ...generateEpicDependencies(), ...dependencyOverides },
+  });
 
-export const configureStore = (baseState: any = {}) => {
   const store = createStore(
     rootReducer,
     baseState,
