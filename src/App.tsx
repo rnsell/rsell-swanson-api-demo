@@ -28,6 +28,7 @@ window.addEventListener("message", (event) => {
     }
   }
 });
+
 function App() {
   return (
     <Provider store={store}>
