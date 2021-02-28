@@ -1,1 +1,1 @@
-export * from "./quote-table-array";
+export * from "./view-selectors";
