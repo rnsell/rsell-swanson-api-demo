@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`calculate-vote-click downvote cases downvote cases 1`] = `
+Array [
+  Object {
+    "downVoteSelected": true,
+    "id": "7e9a20483bbbc00e4621614487a13194",
+    "quoteText": "Go Beyond Plus Ultra",
+    "upVoteSelected": false,
+    "votes": 0,
+  },
+  Object {
+    "downVoteSelected": true,
+    "id": "7e9a20483bbbc00e4621614487a13194",
+    "quoteText": "Go Beyond Plus Ultra",
+    "upVoteSelected": false,
+    "votes": -3,
+  },
+  Object {
+    "downVoteSelected": false,
+    "id": "7e9a20483bbbc00e4621614487a13194",
+    "quoteText": "Go Beyond Plus Ultra",
+    "upVoteSelected": false,
+    "votes": 3,
+  },
+]
+`;
+
+exports[`calculate-vote-click upvote cases 1`] = `
+Array [
+  Object {
+    "downVoteSelected": false,
+    "id": "7e9a20483bbbc00e4621614487a13194",
+    "quoteText": "Go Beyond Plus Ultra",
+    "upVoteSelected": true,
+    "votes": 1,
+  },
+  Object {
+    "downVoteSelected": false,
+    "id": "7e9a20483bbbc00e4621614487a13194",
+    "quoteText": "Go Beyond Plus Ultra",
+    "upVoteSelected": false,
+    "votes": -1,
+  },
+  Object {
+    "downVoteSelected": false,
+    "id": "7e9a20483bbbc00e4621614487a13194",
+    "quoteText": "Go Beyond Plus Ultra",
+    "upVoteSelected": true,
+    "votes": 2,
+  },
+]
+`;
