@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const ronSwansonApiUrl = "http://ron-swanson-quotes.herokuapp.com/v2/quotes";
+const ronSwansonApiUrl = "https://ron-swanson-quotes.herokuapp.com/v2/quotes";
 
 export enum ApiErrors {
   PARAMETER_ERROR = "PARAMETER_ERROR",
