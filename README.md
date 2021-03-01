@@ -1,4 +1,12 @@
-# Getting Started with Create React App
+# Ronswon Api Demo
+
+This application makes a request to the [Ron Swanson Api](https://github.com/jamesseanwright/ron-swanson-quotes) and then displays them on the page. It will randomize votes to simulate a page where people have actually voted on their favorite quotes. The data is serialized to session storage so upon refresh the page contains the same results. The user can upvote or downvote quotes on a page but similiar to reddit, they can only upvote or downvote once.
+
+Architecturally, there are much simpler ways to build this application, but this project uses redux to provide the ability to truly customize the application. The project uses styled components to agnostically not have to choose a css preprocessor and aims at using modern component design with React. Components use data-testid attributes with a BEM like approach for e2e qa testing. The application does not achieve 100% coverage yet but covers critical parts like the components. Cypress tests will come eventually.
+
+As said previously there are simpler methods, but redux and rxjs allow for a very deep customization. A companion [chrome extension](https://github.com/rnsell/rsell-swanson-demo-chrome-extension) exists that allows further customization of the application such as modifying how many quotes are fetched, permantly displaying the error message on the page which might be hard to test, and increasing the time it takes to get data to easily see the progress bar. Since the application styles are stored in the redux store even display customizations and text on the page could be customized and will eventually come to the extension.
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
